@@ -21,7 +21,11 @@ Xingyi Yang, Xinchao Wang
 
 National University of Singapore
 
-# Installation
+### Key Insight:
+
+The KAT model integrates KANs into transformers for large-scale training scenarios such as ImageNet, showing significant performance improvements.
+
+## Installation
 
 ```shell
 # install torch and other things
@@ -32,7 +36,8 @@ pip install -e .
 ```
 please refer to `https://github.com/Adamdad/rational_kat_cu.git` for the cuda rational function installation
 
-# Checkpoint
+## Model Checkpoints
+Download pre-trained models or access training checkpoints:
 
 |Model | Param| Top1 |Link|
 | ---|---|---| ---|
@@ -42,8 +47,11 @@ please refer to `https://github.com/Adamdad/rational_kat_cu.git` for the cuda ra
 |KAT-S (Pretrained)|22.1M | 82.0|
 | KAT-B|86.6M| 82.3 | [link](https://github.com/Adamdad/kat/releases/download/checkpoint/kat_base_patch16_224_abff874d925d756d15cde97303f772a3460ddbd44b9c53fb9ce5cf15be230fb6.pth)
 
-# Model Training
+## Model Training
 
 ```shell
 bash scripts/train_kat_tiny_8x128.sh
 ```
+
+## Acknowledgments
+We extend our gratitude to the authors of [rational_activations]() for their contributions to CUDA rational function implementations that inspired parts of this work.
