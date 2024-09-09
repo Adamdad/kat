@@ -25,7 +25,7 @@ National University of Singapore
 
 The KAT model integrates KANs into transformers for large-scale training scenarios such as ImageNet, showing significant performance improvements.
 
-## Installation
+## Installation and Dataset
 
 ```shell
 # install torch and other things
@@ -35,6 +35,24 @@ cd rational_kat_cu
 pip install -e .
 ```
 please refer to `https://github.com/Adamdad/rational_kat_cu.git` for the cuda rational function installation
+
+Data preparation: ImageNet with the following folder structure, you can extract ImageNet by this [script](https://gist.github.com/BIGBALLON/8a71d225eff18d88e469e6ea9b39cef4)
+
+```
+│imagenet/
+├──train/
+│  ├── n01440764
+│  │   ├── n01440764_10026.JPEG
+│  │   ├── n01440764_10027.JPEG
+│  │   ├── ......
+│  ├── ......
+├──val/
+│  ├── n01440764
+│  │   ├── ILSVRC2012_val_00000293.JPEG
+│  │   ├── ILSVRC2012_val_00002138.JPEG
+│  │   ├── ......
+│  ├── ......
+```
 
 ## Model Checkpoints
 Download pre-trained models or access training checkpoints:
@@ -83,6 +101,17 @@ bash ./dist_train.sh 8 $DATA_PATH \
     --log-wandb
 ```
 
-
 ## Acknowledgments
-We extend our gratitude to the authors of [rational_activations]() for their contributions to CUDA rational function implementations that inspired parts of this work.
+We extend our gratitude to the authors of [rational_activations](https://github.com/ml-research/rational_activations) for their contributions to CUDA rational function implementations that inspired parts of this work.
+
+## Bibtex
+```bibtex
+@misc{yang2024compositional,
+    title={Kolmogorov–Arnold Transformer},
+    author={Xingyi Yang and Xinchao Wang},
+    year={2024},
+    eprint={XXXX},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+```
