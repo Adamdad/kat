@@ -64,7 +64,7 @@ Download pre-trained models or access training checkpoints:
 |KAT-S| 22.1M | 81.2| [link](https://github.com/Adamdad/kat/releases/download/checkpoint/kat_tiny_patch16_224_1f3ad3b2e69821f3d412f2924cf159a0e266f142d739cb68f68f796f5a0fe289.pth)
 |KAT-S (Pretrained)|22.1M | 82.0| [link](https://github.com/Adamdad/kat/releases/download/checkpoint/kat_small_patch_224-finetune_3ae087a4c28e2993468eb377d5151350c52c80b2a70cc48ceec63d1328ba58e0.pth)
 | KAT-B|86.6M| 82.3 | [link](https://github.com/Adamdad/kat/releases/download/checkpoint/kat_base_patch16_224_abff874d925d756d15cde97303f772a3460ddbd44b9c53fb9ce5cf15be230fb6.pth)
-|  KAT-B (Pretrained)|86.6M| 82.7 | |
+|  KAT-B (Pretrained)|86.6M| 82.8 | |
 
 ## Model Training
 
@@ -78,7 +78,7 @@ If you want to change the hyper-parameters, can edit
 DATA_PATH=/local_home/dataset/imagenet/
 
 bash ./dist_train.sh 8 $DATA_PATH \
-    --model kat_tiny_swish_patch16_224 \
+    --model kat_tiny_swish_patch16_224 \ # Rationals are initialized to be swish functions 
     -b 128 \
     --opt adamw \
     --lr 1e-3 \
