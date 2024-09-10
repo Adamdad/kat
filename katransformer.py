@@ -1180,11 +1180,16 @@ def _cfg(url: str = '', **kwargs) -> Dict[str, Any]:
 default_cfgs = {
     'kat_tiny_patch16_224': _cfg(
         url='https://huggingface.co/adamdad/kat_pretained/resolve/main/kat_tiny_patch16_224_1f3ad3b2e69821f3d412f2924cf159a0e266f142d739cb68f68f796f5a0fe289.pth'),
+    'kat_tiny_patch16_224.vitft': _cfg(
+        url='https://huggingface.co/adamdad/kat_pretained/resolve/main/kat_tiny_patch16_224-finetune_64f124d003803e4a7e1aba1ba23500ace359b544e8a5f0110993f25052e402fb.pth'),
     'kat_small_patch16_224': _cfg(
         url='https://huggingface.co/adamdad/kat_pretained/resolve/main/kat_small_patch16_224_32487885cf13d2c14e461c9016fac8ad43f7c769171f132530941e930aeb5fe2.pth'),
+    'kat_small_patch16_224.vitft': _cfg(
+        url='https://huggingface.co/adamdad/kat_pretained/resolve/main/kat_small_patch_224-finetune_3ae087a4c28e2993468eb377d5151350c52c80b2a70cc48ceec63d1328ba58e0.pth'),
     'kat_base_patch16_224': _cfg(
         url='https://huggingface.co/adamdad/kat_pretained/resolve/main/kat_base_patch16_224_abff874d925d756d15cde97303f772a3460ddbd44b9c53fb9ce5cf15be230fb6.pth'),
-    
+    'kat_base_patch16_224.vitft': _cfg(
+        url='https://huggingface.co/adamdad/kat_pretained/resolve/main/kat_base_patch16_224-finetune_440bf1ead9dd8ecab642078cfb60ae542f1fa33ca65517260501e02c011e38f2.pth')
 }
 
 
