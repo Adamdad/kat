@@ -506,7 +506,7 @@ class KATVisionTransformer(nn.Module):
             rescale(layer.mlp.fc2.weight.data, layer_id + 1)
 
     def init_weights(self, mode: str = '') -> None:
-        assert mode in ('jax', 'jax_nlhb', 'moco', '', 'kan', 'kan_mimetic', 'kan_mimetic2d', 'mimetic')
+        assert mode in ('jax', 'jax_nlhb', 'moco', '', 'kan', 'kan_mimetic', 'mimetic')
         head_bias = -math.log(self.num_classes) if 'nlhb' in mode else 0.
         if self.pos_embed is not None:
             trunc_normal_(self.pos_embed, std=.02)
@@ -516,8 +516,6 @@ class KATVisionTransformer(nn.Module):
         mode = mode + f'_{self.act_init}' if 'kan' in mode else mode
         named_apply(get_init_weights_vit(mode, head_bias), self)
         
-        if 'mimetic2d' in mode:
-            named_apply(init_weights_attn_mimetic2d, self)
         if 'mimetic' in mode:
             named_apply(init_weights_attn_mimetic, self)
         # named_apply(init_weights_attn_mimetic, self)
@@ -813,27 +811,6 @@ def init_weights_attn_mimetic(module: nn.Module, name: str = '') -> None:
         module.qkv.weight.data[2*embed_dim:] = torch.tensor(V).float()
         module.proj.weight.data = torch.tensor(Proj).float()
 
-def init_weights_attn_mimetic2d(module: nn.Module, name: str = '') -> None:
-    """ ViT weight initialization, original timm impl (for reproducibility) """
-    if isinstance(module, Attention) or isinstance(module, KAN_Attention):
-        alpha1 = 0.7
-        beta1 = 0.7
-        alpha2 = 0.4
-        beta2 = 0.4
-        head_dim = module.head_dim
-        embed_dim = module.head_dim * module.num_heads
-
-        for h in range(module.num_heads):
-            Q, K = get_ortho_like_gaussian2d(embed_dim, alpha1, beta1, sigma=1.0, sign=1)
-            Q = Q[:,:head_dim]
-            K = K.T[:,:head_dim]
-
-            module.qkv.weight.data[(h*head_dim):((h+1)*head_dim)] = torch.tensor(Q.T).float()
-            module.qkv.weight.data[embed_dim+(h*head_dim):embed_dim+((h+1)*head_dim)] = torch.tensor(K.T).float()
-
-        V, Proj = get_ortho_like(embed_dim, alpha2, beta2, -1)
-        module.qkv.weight.data[2*embed_dim:] = torch.tensor(V).float()
-        module.proj.weight.data = torch.tensor(Proj).float()
 
 def init_weights_vit_jax(module: nn.Module, name: str = '', head_bias: float = 0.0) -> None:
     """ ViT weight initialization, matching JAX (Flax) impl """
@@ -1246,7 +1223,6 @@ def kat_tiny_patch16_224(pretrained: bool = False, **kwargs) -> KATVisionTransfo
                       weight_init="kan_mimetic")
     model = _create_kat_transformer('kat_tiny_patch16_224', pretrained=pretrained, **dict(model_args, **kwargs))
     return model
-
 
 @register_model
 def kat_tiny_gelu_patch16_224(pretrained: bool = False, **kwargs) -> KATVisionTransformer:
