@@ -21,7 +21,7 @@ Xingyi Yang, Xinchao Wang
 
 National University of Singapore
 
-### 📝 Key Insight:
+### 🔑 Key Insight:
 
 The KAT model integrates KANs into transformers for large-scale training scenarios such as ImageNet, showing significant performance improvements.
 
