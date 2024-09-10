@@ -372,7 +372,7 @@ class KATVisionTransformer(nn.Module):
             norm_layer: Optional[LayerType] = None,
             act_layer: Optional[LayerType] = None, # None,
             block_fn: Type[nn.Module] = Block,
-            mlp_layer: Type[nn.Module] = Mlp,
+            mlp_layer: Type[nn.Module] = KAN,
             act_init: str = 'gelu',
     ) -> None:
         """
