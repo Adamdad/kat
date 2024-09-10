@@ -54,6 +54,10 @@ Data preparation: ImageNet with the following folder structure, you can extract 
 │  ├── ......
 ```
 
+## Usage
+
+Refer to `example.py` for a detailed use case demonstrating how to use KAT with timm to classify an image.
+
 ## Model Checkpoints
 Download pre-trained models or access training checkpoints:
 
