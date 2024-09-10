@@ -76,8 +76,8 @@ parser.add_argument('--input-img-mode', default=None, type=str,
 parser.add_argument('--target-key', default=None, type=str,
                    help='Dataset key for target labels.')
 
-parser.add_argument('--model', '-m', metavar='NAME', default='dpn92',
-                    help='model architecture (default: dpn92)')
+parser.add_argument('--model', '-m', metavar='NAME', default='kat_tiny_patch16_224',
+                    help='model architecture (default: kat_tiny_patch16_224)')
 parser.add_argument('--pretrained', dest='pretrained', action='store_true',
                     help='use pre-trained model')
 parser.add_argument('-j', '--workers', default=4, type=int, metavar='N',
