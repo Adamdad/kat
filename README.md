@@ -11,7 +11,7 @@
 <img src="assets/KAT.png" width="400"> <br>
 </p>
 
-This is a PyTorch/GPU implementation of the paper **Kolmogorov–Arnold Transformer (KAT)**, which replace the MLP layers in vision transformer with KAN layers.
+🎉 This is a PyTorch/GPU implementation of the paper **Kolmogorov–Arnold Transformer (KAT)**, which replace the MLP layers in vision transformer with KAN layers.
 
 **Kolmogorov–Arnold Transformer**
 
@@ -25,7 +25,7 @@ National University of Singapore
 
 The KAT model integrates KANs into transformers for large-scale training scenarios such as ImageNet, showing significant performance improvements.
 
-## Installation and Dataset
+## 🛠️ Installation and Dataset
 
 ```shell
 # install torch and other things
@@ -36,7 +36,7 @@ pip install -e .
 ```
 please refer to `https://github.com/Adamdad/rational_kat_cu.git` for the cuda rational function installation
 
-Data preparation: ImageNet with the following folder structure, you can extract ImageNet by this [script](https://gist.github.com/BIGBALLON/8a71d225eff18d88e469e6ea9b39cef4)
+📦 Data preparation: ImageNet with the following folder structure, you can extract ImageNet by this [script](https://gist.github.com/BIGBALLON/8a71d225eff18d88e469e6ea9b39cef4)
 
 ```
 │imagenet/
@@ -58,10 +58,10 @@ Data preparation: ImageNet with the following folder structure, you can extract 
 
 Refer to `example.py` for a detailed use case demonstrating how to use KAT with timm to classify an image.
 
-## Model Checkpoints
+## 📊 Model Checkpoints
 Download pre-trained models or access training checkpoints:
 
-|Model |Setup | Param| Top1 |Link|
+|🏷️ Model |⚙️ Setup |📦 Param| 📈 Top1 |🔗 Link|
 | ---|---|---| ---|---|
 |KAT-T| From Scratch|5.7M | 74.6| [link](https://github.com/Adamdad/kat/releases/download/checkpoint/kat_small_patch16_224_32487885cf13d2c14e461c9016fac8ad43f7c769171f132530941e930aeb5fe2.pth)/[huggingface](https://huggingface.co/adamdad/kat_tiny_patch16_224)
 |KAT-T | From ViT | 5.7M | 75.7| [link](https://github.com/Adamdad/kat/releases/download/checkpoint/kat_tiny_patch16_224-finetune_64f124d003803e4a7e1aba1ba23500ace359b544e8a5f0110993f25052e402fb.pth)/[huggingface](https://huggingface.co/adamdad/kat_tiny_patch16_224.vitft)
@@ -70,7 +70,7 @@ Download pre-trained models or access training checkpoints:
 | KAT-B| From Scratch |86.6M| 82.3 | [link](https://github.com/Adamdad/kat/releases/download/checkpoint/kat_base_patch16_224_abff874d925d756d15cde97303f772a3460ddbd44b9c53fb9ce5cf15be230fb6.pth)/[huggingface](https://huggingface.co/adamdad/kat_base_patch16_224)
 |  KAT-B | From ViT |86.6M| 82.8 | [link](https://huggingface.co/adamdad/kat_pretained/resolve/main/kat_base_patch16_224-finetune_440bf1ead9dd8ecab642078cfb60ae542f1fa33ca65517260501e02c011e38f2.pth)/[huggingface](https://huggingface.co/adamdad/kat_base_patch16_224.vitft)|
 
-## Model Training
+## 🎓Model Training
 
 ```shell
 bash scripts/train_kat_tiny_8x128.sh
@@ -105,7 +105,7 @@ bash ./dist_train.sh 8 $DATA_PATH \
     --log-wandb
 ```
 
-## Evaluate
+## 🧪 Evaluation
 To evaluate our `kat_tiny_patch16_224` models, run:
 
 ```shell
@@ -144,12 +144,11 @@ Test: [  90/98]  Time: 0.212s (0.592s,  864.23/s)  Loss:  1.1640 (1.1143)  Acc@1
 ```
 
 
-
-
-## Acknowledgments
+## 🙏 Acknowledgments
 We extend our gratitude to the authors of [rational_activations](https://github.com/ml-research/rational_activations) for their contributions to CUDA rational function implementations that inspired parts of this work.
 
-## Bibtex
+## 📚 Bibtex
+If you use this repository, please cite:
 ```bibtex
 @misc{yang2024compositional,
     title={Kolmogorov–Arnold Transformer},
