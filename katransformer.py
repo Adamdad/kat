@@ -773,7 +773,6 @@ def init_weights_vit_kan_gelu(module: nn.Module, name: str = '') -> None:
         module.init_weights()
         
 def init_weights_vit_kan_swish(module: nn.Module, name: str = '') -> None:
-    print('init_weights_vit_kan_swish')
     """ ViT weight initialization, original timm impl (for reproducibility) """
     if isinstance(module, nn.Linear):
         if 'mlp' in name:
@@ -1191,11 +1190,11 @@ def _cfg(url: str = '', **kwargs) -> Dict[str, Any]:
         'num_classes': 1000,
         'input_size': (3, 224, 224),
         'pool_size': None,
-        'crop_pct': 0.85,
+        'crop_pct': 0.875,
         'interpolation': 'bicubic',
         'fixed_input_size': True,
-        'mean': IMAGENET_INCEPTION_MEAN,
-        'std': IMAGENET_INCEPTION_STD,
+        'mean': IMAGENET_DEFAULT_MEAN,
+        'std': IMAGENET_DEFAULT_STD,
         'first_conv': 'patch_embed.proj',
         'classifier': 'head',
         **kwargs,
@@ -1203,14 +1202,13 @@ def _cfg(url: str = '', **kwargs) -> Dict[str, Any]:
 
 default_cfgs = {
     'kat_tiny_patch16_224': _cfg(
-        url=''),
+        url='https://huggingface.co/adamdad/kat_pretained/blob/main/kat_tiny_patch16_224_1f3ad3b2e69821f3d412f2924cf159a0e266f142d739cb68f68f796f5a0fe289.pth'),
     'kat_small_patch16_224': _cfg(
-        url=''),
+        url='https://huggingface.co/adamdad/kat_pretained/blob/main/kat_small_patch16_224_32487885cf13d2c14e461c9016fac8ad43f7c769171f132530941e930aeb5fe2.pth'),
     'kat_base_patch16_224': _cfg(
-        url=''),
+        url='https://huggingface.co/adamdad/kat_pretained/blob/main/kat_base_patch16_224_abff874d925d756d15cde97303f772a3460ddbd44b9c53fb9ce5cf15be230fb6.pth'),
     
 }
-
 
 
 def _create_kat_transformer(variant: str, pretrained: bool = False, **kwargs) -> KATVisionTransformer:
@@ -1236,6 +1234,18 @@ def _create_kat_transformer(variant: str, pretrained: bool = False, **kwargs) ->
         feature_cfg=dict(out_indices=out_indices, feature_cls='getter'),
         **kwargs,
     )
+
+@register_model
+def kat_tiny_patch16_224(pretrained: bool = False, **kwargs) -> KATVisionTransformer:
+    """ KAT-Tiny with rational activations (ViT-S/16)
+    """
+    model_args = dict(patch_size=16, embed_dim=192, depth=12, num_heads=3, 
+                      act_layer=KAT_Group, 
+                      act_init='swish',
+                      mlp_layer=KAN, 
+                      weight_init="kan_mimetic")
+    model = _create_kat_transformer('kat_tiny_patch16_224', pretrained=pretrained, **dict(model_args, **kwargs))
+    return model
 
 
 @register_model
@@ -1263,6 +1273,20 @@ def kat_tiny_swish_patch16_224(pretrained: bool = False, **kwargs) -> KATVisionT
     return model
 
 @register_model
+def kat_small_patch16_224(pretrained: bool = False, **kwargs) -> KATVisionTransformer:
+    """ KAT-Small with rational activations (ViT-S/16)"""
+    model_args = dict(patch_size=16, 
+                      embed_dim=384, 
+                      depth=12, 
+                      num_heads=6, 
+                      act_init='swish',
+                      act_layer=KAT_Group, 
+                      mlp_layer=KAN, 
+                      weight_init="kan_mimetic")
+    model = _create_kat_transformer('kat_small_patch16_224', pretrained=pretrained, **dict(model_args, **kwargs))
+    return model
+
+@register_model
 def kat_small_gelu_patch16_224(pretrained: bool = False, **kwargs) -> KATVisionTransformer:
     """ KAT-Small with rational activations (ViT-S/16)"""
     model_args = dict(patch_size=16, 
@@ -1287,6 +1311,19 @@ def kat_small_swish_patch16_224(pretrained: bool = False, **kwargs) -> KATVision
     model = _create_kat_transformer('kat', pretrained=pretrained, **dict(model_args, **kwargs))
     return model
 
+@register_model
+def kat_base_patch16_224(pretrained: bool = False, **kwargs) -> KATVisionTransformer:
+    """ KAT-Base with rational activations (ViT-B/16)"""
+    model_args = dict(patch_size=16, 
+                      embed_dim=768, 
+                      depth=12, 
+                      num_heads=12, 
+                      act_layer=KAT_Group, 
+                      mlp_layer=KAN, 
+                      act_init='swish',
+                      weight_init="kan_mimetic")
+    model = _create_kat_transformer('kat_base_patch16_224', pretrained=pretrained, **dict(model_args, **kwargs))
+    return model
 
 @register_model
 def kat_base_gelu_patch16_224(pretrained: bool = False, **kwargs) -> KATVisionTransformer:
@@ -1309,6 +1346,3 @@ def kat_base_swish_patch16_224(pretrained: bool = False, **kwargs) -> KATVisionT
                       weight_init="kan_mimetic")
     model = _create_kat_transformer('kat_base_patch16_224', pretrained=pretrained, **dict(model_args, **kwargs))
     return model
-
-
-
