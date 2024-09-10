@@ -1,4 +1,4 @@
-# Kolmogorov–Arnold Transformer: A PyTorch Implementation
+<h1 align="center">Kolmogorov–Arnold Transformer: A PyTorch Implementation</h1>
 
 <p align="center">
 <a href="https://arxiv.org/abs/2405.07992" alt="arXiv">
