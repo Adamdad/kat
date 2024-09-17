@@ -47,7 +47,7 @@ Vanilla ViT + KAN struggle to scale effectively. We introduce the KAT model, whi
 - [ ] KAT on NLP tasks.
 
 ## 🛠️ Installation and Dataset
-
+Please find our CUDA implementation in [https://github.com/Adamdad/rational_kat_cu.git](https://github.com/Adamdad/rational_kat_cu.git).
 ```shell
 # install torch and other things
 pip install timm==1.0.3
