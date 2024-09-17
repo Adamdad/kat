@@ -1,7 +1,9 @@
-<div style="display: flex; align-items: center;">
-    <img src="assets/DALL·E 2024-09-18 00.03.35 - A logo design featuring a split face, with the left side being a large, clear, and bold letter 'K' in a metallic, iron style. The 'K' should have an i.webp" width="100" style="margin-right: 20px;">
-    <h1 style="margin: 0;">Kolmogorov–Arnold Transformer: <br>A PyTorch Implementation</h1>
-</div>
+<table>
+  <tr>
+    <td><img src="assets/DALL·E 2024-09-18 00.03.35 - A logo design featuring a split face, with the left side being a large, clear, and bold letter 'K' in a metallic, iron style. The 'K' should have an i.webp" width="200"></td>
+    <td><h1>Kolmogorov–Arnold Transformer: <br>A PyTorch Implementation</h1></td>
+  </tr>
+</table>
 
 <p align="center">
 <a href="https://arxiv.org/abs/2405.07992" alt="arXiv">
