@@ -1,7 +1,7 @@
 <div align="center">
   <table>
     <tr>
-      <td><img src="assets/logo.webp" width="200"></td>
+      <td><img src="assets/logo.webp" width="150"></td>
       <td><h1>Kolmogorov–Arnold Transformer: <br>A PyTorch Implementation</h1></td>
     </tr>
   </table>
