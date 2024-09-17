@@ -30,18 +30,18 @@ National University of Singapore
 
 ### 🔑 Key Insight:
 
-The KAT model integrates KANs into transformers for large-scale training scenarios such as ImageNet, showing significant performance improvements.
+Vanilla ViT + KAN struggle to scale effectively. We introduce the KAT model, which integrates GR-KANs into transformers for large-scale training scenarios like ImageNet, achieving significant performance improvements.
 
 <p align="center">
 <img src="assets/kat3-1.png"> <br>
 </p>
 
-Three solutions we introduce:
-1. **Base Function**: Change from B-spline to CUDA-implemented Rational.
-2. **Group KAN**: Share weights among groups of edges.
+### 🎯 Our Solutions:
+1. **Base Function**: Replace B-spline to CUDA-implemented Rational.
+2. **Group KAN**: Share weights among groups of edges for efficiency.
 3. **Initialization**: Maintain activation magnitudes across layers.
 
-### Updates
+### 🛠️ Updates
 - [x] Release the KAT paper, CUDA implementation and IN-1k training code.
 - [ ] KAT Detection and segmentation code.
 - [ ] KAT on NLP tasks.
