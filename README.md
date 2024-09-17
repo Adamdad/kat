@@ -42,9 +42,9 @@ Three solutions we introduce:
 3. **Initialization**: Maintain activation magnitudes across layers.
 
 ### Updates
-- [x] Release the paper, CUDA implementation and IN-1k training code.
-- [ ] Detection and segmentation code.
-- [ ] KAN on NLP tasks.
+- [x] Release the KAT paper, CUDA implementation and IN-1k training code.
+- [ ] KAT Detection and segmentation code.
+- [ ] KAT on NLP tasks.
 
 ## 🛠️ Installation and Dataset
 
