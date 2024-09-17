@@ -30,6 +30,7 @@ The KAT model integrates KANs into transformers for large-scale training scenari
 ```shell
 # install torch and other things
 pip install timm==1.0.3
+pip install wandb # I personally use wandb for results visualizations
 git clone https://github.com/Adamdad/rational_kat_cu.git
 cd rational_kat_cu
 pip install -e .
@@ -72,6 +73,7 @@ Download pre-trained models or access training checkpoints:
 
 ## 🎓Model Training
 
+All training scripts are under `scripts/`
 ```shell
 bash scripts/train_kat_tiny_8x128.sh
 ```
