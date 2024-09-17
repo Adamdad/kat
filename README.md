@@ -41,7 +41,7 @@ Vanilla ViT + KAN struggle to scale effectively. We introduce the KAT model, whi
 2. **Group KAN**: Share weights among groups of edges for efficiency.
 3. **Initialization**: Maintain activation magnitudes across layers.
 
-### 🛠️ Updates
+### ✅ Updates
 - [x] Release the KAT paper, CUDA implementation and IN-1k training code.
 - [ ] KAT Detection and segmentation code.
 - [ ] KAT on NLP tasks.
