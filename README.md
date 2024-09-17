@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td><img src="assets/DALL·E 2024-09-18 00.03.35 - A logo design featuring a split face, with the left side being a large, clear, and bold letter 'K' in a metallic, iron style. The 'K' should have an i.webp" width="200"></td>
+    <td><img src="assets/DALL·E 2024-09-18 00.03.35 - A logo design featuring a split face, with the left side being a large, clear, and bold letter 'K' in a metallic, iron style. The 'K' should have an i.webp" width="100"></td>
     <td><h1>Kolmogorov–Arnold Transformer: <br>A PyTorch Implementation</h1></td>
   </tr>
 </table>
