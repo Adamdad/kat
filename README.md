@@ -16,7 +16,6 @@
 
 <p align="center">
 <img src="assets/KAT.png" width="300"> <br>
-<img src="assets/kat3-1.png"> <br>
 </p>
 
 🎉 This is a PyTorch/GPU implementation of the paper **Kolmogorov–Arnold Transformer (KAT)**, which replace the MLP layers in transformer with KAN layers.
@@ -32,6 +31,10 @@ National University of Singapore
 ### 🔑 Key Insight:
 
 The KAT model integrates KANs into transformers for large-scale training scenarios such as ImageNet, showing significant performance improvements.
+
+<p align="center">
+<img src="assets/kat3-1.png"> <br>
+</p>
 
 Three solutions we introduce:
 1. **Base Function**: Change from B-spline to CUDA-implemented Rational.
