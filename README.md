@@ -16,6 +16,7 @@
 
 <p align="center">
 <img src="assets/KAT.png" width="300"> <br>
+<img src="assets/kat3-1.png"> <br>
 </p>
 
 🎉 This is a PyTorch/GPU implementation of the paper **Kolmogorov–Arnold Transformer (KAT)**, which replace the MLP layers in transformer with KAN layers.
