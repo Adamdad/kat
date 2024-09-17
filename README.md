@@ -56,7 +56,6 @@ git clone https://github.com/Adamdad/rational_kat_cu.git
 cd rational_kat_cu
 pip install -e .
 ```
-please refer to `https://github.com/Adamdad/rational_kat_cu.git` for the cuda rational function installation
 
 📦 Data preparation: ImageNet with the following folder structure, you can extract ImageNet by this [script](https://gist.github.com/BIGBALLON/8a71d225eff18d88e469e6ea9b39cef4)
 
