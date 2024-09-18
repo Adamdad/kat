@@ -22,7 +22,7 @@
 
 **Kolmogorov–Arnold Transformer**
 
- 📝[[Paper](https://arxiv.org/abs/2407.06182)] </>[[code](https://github.com/Adamdad/kat)]
+ 📝[[Paper](https://arxiv.org/abs/2409.10594)] </>[[code](https://github.com/Adamdad/kat)]
 
 Xingyi Yang, Xinchao Wang
 
