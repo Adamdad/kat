@@ -8,8 +8,8 @@
 </div>
 
 <p align="center">
-<a href="https://arxiv.org/abs/2405.07992" alt="arXiv">
-    <img src="https://img.shields.io/badge/arXiv-2405.07992-b31b1b.svg?style=flat" /></a>
+<a href="https://arxiv.org/abs/2409.10594" alt="arXiv">
+    <img src="https://img.shields.io/badge/arXiv-2409.10594-b31b1b.svg?style=flat" /></a>
       <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-1.x %20%7C%202.x-673ab7.svg" alt="Tested PyTorch Versions"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-4caf50.svg" alt="License"></a>
 </p>
@@ -176,7 +176,7 @@ If you use this repository, please cite:
     title={Kolmogorov–Arnold Transformer},
     author={Xingyi Yang and Xinchao Wang},
     year={2024},
-    eprint={XXXX},
+    eprint={2409.10594},
     archivePrefix={arXiv},
     primaryClass={cs.CV}
 }
