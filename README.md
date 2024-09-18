@@ -23,7 +23,7 @@ Yes, I kan!
 
 **Kolmogorov–Arnold Transformer**
 
- 📝[[Paper](https://arxiv.org/abs/2409.10594)] </>[[code](https://github.com/Adamdad/kat)]
+ 📝[[Paper](https://arxiv.org/abs/2409.10594)] </>[[code](https://github.com/Adamdad/kat)]  </>[[CUDA kernel](https://github.com/Adamdad/rational_kat_cu)] 
 
 Xingyi Yang, Xinchao Wang
 
