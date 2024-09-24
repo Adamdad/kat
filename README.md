@@ -173,7 +173,7 @@ We extend our gratitude to the authors of [rational_activations](https://github.
 ## 📚 Bibtex
 If you use this repository, please cite:
 ```bibtex
-@misc{yang2024compositional,
+@misc{yang2024kat,
     title={Kolmogorov–Arnold Transformer},
     author={Xingyi Yang and Xinchao Wang},
     year={2024},
